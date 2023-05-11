@@ -28,10 +28,10 @@ const Menu = ({ showCatMenu, setshowCatMenu }) => {
               <li className="cursor-pointer flex items-center gap-2 relative" onMouseEnter={()=> setshowCatMenu(true)} onMouseLeave={()=>setshowCatMenu(false)}>
                 {item?.name} <BsChevronDown size={14}></BsChevronDown>
                 {showCatMenu && (
-                  <ul className="bg-white absolute top-6 left-0 min-w-[250px] px-1 text-black shadow-lg">
+                  <ul className="bg-white absolute top-6 left-0 min-w-[250px] px-1 py-1 text-black shadow-lg">
                     {subMenuData.map((subItem) => {
                       return (
-                        <Link key={subItem.id} href="/">
+                        <Link key={subItem.id} href="/" onClick={()=>setshowCatMenu(false)}>
                           <li className="h-12 flex justify-between items-center px-3 hover:bg-black/[0.03] rounded-md">
                             {" "}
                             {subItem?.name}
